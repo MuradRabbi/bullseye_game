@@ -1,16 +1,23 @@
 import 'package:bullseye_game/game_page.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 
 void main() {
-  runApp(const MyApp());
+  runApp(const BullseyeGame());
 }
 
-class MyApp extends StatelessWidget {
-  const MyApp({super.key});
+class BullseyeGame extends StatelessWidget {
+  const BullseyeGame({super.key});
 
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
+    SystemChrome.setPreferredOrientations(
+     [
+       DeviceOrientation.landscapeLeft,
+       DeviceOrientation.landscapeRight
+     ]
+    );
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       title: 'Bulls Eye',
